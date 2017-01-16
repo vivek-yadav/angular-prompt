@@ -10,6 +10,7 @@ angular.module('cgPrompt').factory('prompt',['$uibModal','$q',function($uibModal
             input: false,
             label: '',
             value: '',
+			valueType:'text'
             values: false,
             buttons: [
                 {label:'Cancel',cancel:true},
@@ -120,7 +121,7 @@ angular.module('cgPrompt').run(['$templateCache', function($templateCache) {
     "        <form id=\"cgPromptForm\" name=\"form.cgPromptForm\" ng-if=\"options.input\" ng-submit=\"submit()\">\n" +
     "            <div class=\"form-group\" ng-class=\"{'has-error':cgPromptForm.$invalid && changed}\">\n" +
     "                <label for=\"cgPromptInput\">{{options.label}}</label>\n" +
-    "                <input id=\"cgPromptInput\" type=\"text\" class=\"form-control\"  placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" ng-if=\"!options.values || options.values.length === 0\"/ autofocus=\"autofocus\">\n" +
+    "                <input id=\"cgPromptInput\" type=\"{{options.valueType}}\" class=\"form-control\"  placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" ng-if=\"!options.values || options.values.length === 0\"/ autofocus=\"autofocus\">\n" +
     "                <div class=\"input-group\" ng-if=\"options.values\">\n" +
     "                    <input id=\"cgPromptInput\" type=\"text\" class=\"form-control\" placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" autofocus=\"autofocus\"/>\n" +
     "\n" +
