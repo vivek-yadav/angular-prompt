@@ -10,6 +10,7 @@ angular.module('cgPrompt').factory('prompt',['$uibModal','$q',function($uibModal
             input: false,
             label: '',
             value: '',
+			valueType:'text',
             values: false,
             buttons: [
                 {label:'Cancel',cancel:true},
